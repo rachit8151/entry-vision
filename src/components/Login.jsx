@@ -4,7 +4,7 @@
 import React, { useState } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import axios from "axios";
-import "../css/Login.css";
+import "../css/login.css";
 
 const Login = ({ showAlert, setIsLoggedIn }) => {
   const [credentials, setCredentials] = useState({ identifier: "", password: "" });
