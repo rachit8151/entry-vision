@@ -1,0 +1,115 @@
+.about-wrapper {
+  display: flex;
+  gap: 40px;
+  padding: 70px 60px;
+  color: #e3e3e3;
+  background: #0b0d10;
+  min-height: 90vh;
+  align-items: center;
+}
+
+/* LEFT column (video area) */
+.about-left {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 300px;   /* ensures the area reserves space */
+}
+.video-frame {
+  background: #081a27;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 0 40px rgba(0, 168, 255, 0.35),
+              0 0 70px rgba(0, 168, 255, 0.15) inset;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 500px;     /* was 330px */
+  height: 500px;    /* was 330px */
+  transition: 0.3s ease;
+}
+
+.about-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 14px;
+  filter: drop-shadow(0 0 18px #00a8ff);
+  transition: 0.3s ease;
+}
+
+.video-frame:hover {
+  box-shadow: 0 0 60px rgba(0, 168, 255, 0.55),
+              0 0 90px rgba(0, 168, 255, 0.25) inset;
+  transform: scale(1.03);
+}
+
+
+/* RIGHT column */
+.about-right {
+  flex: 1.2;
+}
+
+.about-title {
+  font-size: 2.8rem;
+  font-weight: bold;
+  color: #00a8ff;
+  text-shadow: 0 0 12px #00a8ff99;
+  margin-bottom: 20px;
+}
+
+.about-text {
+  font-size: 1.15rem;
+  line-height: 1.7;
+  margin-bottom: 18px;
+  color: #cdd2d8;
+}
+
+.about-text span {
+  color: #00c0ff;
+  font-weight: 600;
+}
+
+.about-highlights {
+  display: flex;
+  gap: 20px;
+  margin-top: 30px;
+}
+
+.highlight-box {
+  background: #11141a;
+  padding: 18px 20px;
+  border-radius: 12px;
+  border: 1px solid #1e242c;
+  box-shadow: 0 0 10px #00a8ff22 inset;
+  flex: 1;
+}
+
+.highlight-box h3 {
+  font-size: 1.15rem;
+  margin-bottom: 8px;
+  color: #00a8ff;
+}
+
+.highlight-box p {
+  font-size: 0.95rem;
+  color: #b9c0c9;
+}
+
+/* Fade-in */
+.fade-in {
+  animation: fade 1.2s ease forwards;
+  opacity: 0;
+}
+@keyframes fade {
+  from { opacity: 0; transform: translateY(20px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Responsive */
+@media (max-width: 900px) {
+  .about-wrapper { flex-direction: column; text-align: center; padding: 40px 20px; }
+  .about-highlights { flex-direction: column; }
+  .about-video { width: 260px; aspect-ratio: 1/1; }
+}

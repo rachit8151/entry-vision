@@ -1,0 +1,118 @@
+/* =========================================
+   🌙 DARK NEON SIGNUP PAGE (FINAL VERSION)
+   ========================================= */
+
+/* Full dark background */
+.signup-page {
+  background-color: #0d0f12;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Center box */
+.signup-box {
+  background-color: #13161b;
+  border: 1px solid #1c1f26;
+  border-radius: 12px;
+  padding: 40px 30px;
+  width: 100%;
+  max-width: 450px;
+  box-shadow: 0 0 12px rgba(0, 168, 255, 0.08);
+  color: #e3e3e3;
+}
+
+/* Title */
+.signup-box h2 {
+  text-align: center;
+  margin-bottom: 25px;
+  font-size: 26px;
+  font-weight: 600;
+  color: #e3e3e3;
+}
+
+/* Underline Inputs */
+.signup-box .form-control,
+.signup-box .underline-input {
+  background: none !important;
+  border: none !important;
+  border-bottom: 2px solid #2d323c !important;
+  border-radius: 0 !important;
+  padding: 10px 4px;
+  color: #e3e3e3 !important;
+  margin-bottom: 20px;
+  transition: 0.25s ease;
+}
+
+/* Neon focus effect */
+.signup-box .form-control:focus,
+.signup-box .underline-input:focus {
+  border-bottom: 2px solid #00a8ff !important;
+  outline: none !important;
+  box-shadow: 0 3px 8px rgba(0,168,255,0.3) !important;
+}
+
+/* Dark dropdown */
+.signup-box .form-select {
+  background-color: transparent !important;
+  color: #e3e3e3 !important;
+  border: none !important;
+  border-bottom: 2px solid #2d323c !important;
+  border-radius: 0 !important;
+  padding-left: 4px !important;
+}
+
+.signup-box .form-select option {
+  background-color: #13161b !important;
+  color: #e3e3e3 !important;
+}
+
+.signup-box .form-select:focus {
+  border-bottom: 2px solid #00a8ff !important;
+  box-shadow: 0 3px 8px rgba(0,168,255,0.3) !important;
+  outline: none !important;
+}
+
+/* Small OTP Button */
+.btn-send-otp {
+  height: 45px !important;            /* EXACT height like underline input */
+  padding: 1 10px !important;         /* No extra vertical padding */
+  font-size: 12px;
+  border: 1px solid #00a8ff !important;
+  background: transparent !important;
+  color: #00a8ff !important;
+  border-radius: 6px !important;
+  display: flex;                      /* center text */
+  align-items: center;                /* vertical align */
+  justify-content: center;
+  margin-left: 8px;
+  line-height: 1 !important; 
+  margin-left: 12px !important;
+}
+
+
+.btn-send-otp:hover {
+  background-color: #00a8ff !important;
+  color: black !important;
+}
+
+/* Register Button */
+.btn-register {
+  background-color: #00a8ff !important;
+  color: black !important;
+  border-radius: 25px;
+  padding: 12px;
+  font-weight: 600;
+  width: 100%;
+}
+
+.btn-register:hover {
+  opacity: 0.9;
+}
+
+/* Invalid field underline */
+.is-invalid {
+  border-bottom: 2px solid #ff5555 !important;
+}

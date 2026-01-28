@@ -1,0 +1,63 @@
+.bulk-container {
+  min-height: 100vh;
+  padding: 40px 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: #0d0f12;
+}
+
+.bulk-box {
+  width: 95%;
+  max-width: 1100px;
+  background: #13161b;
+  border: 1px solid #1c1f26;
+  border-radius: 14px;
+  padding: 40px;
+  color: #e3e3e3;
+  box-shadow: 0 0 20px rgba(0,168,255,0.06);
+}
+
+.bulk-title {
+  text-align: center;
+  margin-bottom: 6px;
+  color: #00a8ff;
+  font-weight: 700;
+}
+
+.bulk-sub {
+  text-align: center;
+  color: #9aa4b2;
+  margin-bottom: 20px;
+}
+
+.upload-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.file-input {
+  max-width: 380px;
+  background: #1b1f25;
+  border: 1px solid #2d323c;
+  color: #e3e3e3;
+  border-radius: 6px;
+  margin-bottom: 12px;
+}
+
+.file-input:focus {
+  border-color: #00a8ff;
+  box-shadow: 0 0 6px #00a8ff;
+}
+
+.upload-btn {
+  width: 200px;
+  border-radius: 20px;
+}
+
+.divider {
+  margin: 35px 0;
+  border-color: #2d323c;
+}

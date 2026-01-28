@@ -1,0 +1,199 @@
+/* ===============================
+   Dark Container
+================================ */
+.restrict-container {
+  max-width: 700px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #0f1217;
+  border: 1px solid #1c1f26;
+  border-radius: 12px;
+  box-shadow: 0 0 20px rgba(0, 168, 255, 0.06);
+  color: #e3e3e3;
+}
+
+/* Labels */
+.restrict-container label {
+  color: #bfc7d5;
+  font-weight: 500;
+  margin-bottom: 4px;
+}
+
+/* Reduced-size dropdown */
+.restrict-container select.form-control {
+  background: #1b1f25;
+  border: 1px solid #2d323c;
+  color: #e3e3e3;
+  font-size: 14px;
+  padding: 8px;
+  border-radius: 6px;
+  height: 38px;   /* ⬅ smaller dropdown */
+}
+
+.restrict-container select:focus {
+  border-color: #00a8ff;
+  box-shadow: 0 0 8px rgba(0, 168, 255, 0.4);
+}
+
+/* Restrict Button */
+.btn-restrict {
+  background: #e53e3e;
+  border: none;
+  padding: 8px 18px;
+  border-radius: 20px;
+  font-weight: 600;
+  color: white;
+}
+
+/* ===============================
+   POPUP BOX
+================================ */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+.popup-box {
+  width: 360px;
+  background: #ffffff;
+  padding: 22px;
+  border-radius: 12px;
+  text-align: center;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+}
+
+/* Inputs inside popup */
+.popup-box .form-control {
+  height: 38px;
+  border-radius: 6px;
+  font-size: 14px;
+}
+
+/* Reason box */
+.popup-box textarea {
+  height: 60px;
+  resize: none;
+}
+
+/* Buttons */
+.popup-box button {
+  width: 45%;
+}
+/* ===============================
+   Popup Background
+================================ */
+.popup {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.55);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+
+/* ===============================
+   Popup Box
+================================ */
+.popup-box {
+  width: 420px;
+  background: #ffffff;
+  padding: 32px 30px;
+  border-radius: 14px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  animation: popupFade 0.25s ease;
+  text-align: center;
+}
+
+@keyframes popupFade {
+  from { opacity: 0; transform: scale(0.92); }
+  to   { opacity: 1; transform: scale(1); }
+}
+
+/* ===============================
+   Title styling
+================================ */
+.popup-box h4 {
+  font-size: 24px;
+  color: #1e293b;
+  font-weight: 700;
+  margin-bottom: 6px;
+}
+
+.popup-box p {
+  color: #64748b;
+  font-weight: 600;
+  margin-bottom: 18px;
+}
+
+/* ===============================
+   Underline Input (Login style)
+================================ */
+.popup-box .form-control {
+  border: none !important;
+  border-bottom: 2px solid #cbd5e1 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: #0f172a !important;
+  padding: 10px 4px;
+  font-size: 15px;
+  transition: 0.25s ease;
+}
+
+/* Focus neon blue shadow */
+.popup-box .form-control:focus {
+  border-bottom: 2px solid #00a8ff !important;
+  box-shadow: 0px 3px 6px rgba(0,168,255,0.3) !important;
+  outline: none !important;
+}
+
+/* Textarea size */
+.popup-box textarea.form-control {
+  height: 70px;
+  resize: none;
+}
+
+/* Labels */
+.popup-box label {
+  font-weight: 600;
+  color: #475569;
+  margin-top: 15px;
+  font-size: 14px;
+}
+
+/* ===============================
+   Buttons
+================================ */
+.popup-box button {
+  width: 48%;
+  border-radius: 25px;
+  padding: 10px;
+  font-weight: 600;
+  border: none;
+}
+
+.popup-box .btn-success {
+  background-color: #059669 !important;
+  color: white !important;
+}
+
+.popup-box .btn-secondary {
+  background-color: #94a3b8 !important;
+  color: white !important;
+}
+
+.popup-box .btn-success:hover,
+.popup-box .btn-secondary:hover {
+  opacity: 0.9;
+}

@@ -1,0 +1,143 @@
+/* ==========================
+   🌙 DARK NEON DASHBOARD
+   ========================== */
+
+/* Container */
+/* Outer dark background (full screen) */
+.dashboard-wrapper {
+  background-color: #0d0f12;
+  min-height: 100vh;
+  padding: 40px 0;
+}
+
+/* Inner white/dark card box */
+.admin-dash-container {
+  background-color: #13161b;
+  border: 1px solid #1c1f26;
+  border-radius: 14px;
+  width: 95%;
+  max-width: 1300px;
+  margin: auto;
+  padding: 40px 30px;
+  box-shadow: 0 0 18px rgba(0, 168, 255, 0.06);
+  color: #e3e3e3;
+}
+
+
+/* Welcome Section */
+.welcome-box h2 {
+  font-weight: 600;
+}
+
+.username {
+  color: #00a8ff;
+  font-weight: 700;
+}
+
+.lead {
+  color: #b0b0b0;
+}
+
+/* Card uniform size */
+.dash-card {
+  background-color: #13161b !important;
+  border: 1px solid #1c1f26 !important;
+  border-radius: 12px;
+  transition: 0.3s ease;
+  color: #e3e3e3;
+  
+  /* FIXED SIZE */
+  height: 220px;        /* Adjust this value as you like */
+  width: 100%;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between; /* Even spacing */
+  align-items: center;
+  text-align: center;
+
+  padding: 25px 15px;
+}
+
+/* Hover */
+.dash-card:hover {
+  transform: translateY(-5px);
+  border-color: #00a8ff;
+  box-shadow: 0 0 15px rgba(0, 168, 255, 0.3);
+}
+.dash-card .btn {
+  margin-top: auto;
+}
+
+/* Buttons */
+.btn {
+  border-radius: 20px;
+  font-weight: 500;
+  padding: 8px 18px;
+}
+
+.btn-outline-primary {
+  color: #00a8ff;
+  border-color: #00a8ff;
+}
+
+.btn-outline-primary:hover {
+  background-color: #00a8ff;
+  color: black;
+}
+
+.btn-outline-secondary {
+  color: #cfcfcf;
+  border-color: #7c7c7c;
+}
+
+.btn-outline-warning {
+  color: #e8b64c;
+  border-color: #e8b64c;
+}
+
+.btn-outline-success {
+  color: #15b67d;
+  border-color: #15b67d;
+}
+
+.btn-outline-info {
+  color: #2fc8ff;
+  border-color: #2fc8ff;
+}
+
+.btn-outline-danger {
+  color: #ff5757;
+  border-color: #ff5757;
+}
+
+/* Notification Badge */
+.badge {
+  font-size: 11px;
+  padding: 4px 7px;
+}
+
+/* Toast Alert */
+.custom-alert {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background: #13161b;
+  border-left: 5px solid #00a8ff;
+  padding: 15px 20px;
+  border-radius: 12px;
+  color: #e3e3e3;
+  box-shadow: 0 0 12px rgba(0, 0, 0, 0.5);
+  animation: fadeSlideIn 0.5s ease-in-out;
+}
+
+@keyframes fadeSlideIn {
+  from {
+    transform: translateY(20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}

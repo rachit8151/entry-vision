@@ -1,0 +1,97 @@
+/* FULL DARK BACKGROUND */
+.login-page {
+  min-height: 90vh;
+  background-color: #0d0f12;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* LOGIN BOX */
+.login-box {
+  background-color: #13161b;
+  border: 1px solid #1c1f26;
+  padding: 40px 30px;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+  box-shadow: 0px 0px 12px rgba(0, 168, 255, 0.1);
+}
+
+/* Title */
+.login-title {
+  color: #e3e3e3;
+  font-size: 26px;
+  font-weight: 600;
+  margin-bottom: 25px;
+}
+
+.full-width-input {
+  width: 100%;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px;
+  border-radius: 25px;
+  background-color: #00a8ff;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+.login-btn:hover {
+  opacity: 0.9;
+}
+
+/* Forgot Password */
+.login-link {
+  display: block;
+  margin-top: 15px;
+  color: #00a8ff !important;
+  font-size: 14px;
+}
+
+/* Underline input width + spacing */
+.underline-input {
+  width: 100%;             /* Full width input */
+  font-size: 17px;
+  padding: 10px 4px;
+  margin-bottom: 20px;
+  background: none !important;
+  border: none !important;
+  border-bottom: 2px solid #2d323c !important;
+  color: #e3e3e3 !important;
+}
+
+/* On focus */
+.underline-input:focus {
+  border-bottom: 2px solid #00a8ff !important;
+  box-shadow: 0 3px 8px rgba(0,168,255,0.4) !important;
+}
+
+/* Login Button */
+.login-btn {
+  width: 100%;
+  padding: 12px 0;
+  font-size: 17px;
+  border-radius: 25px;
+  background-color: #00a8ff;
+  border: none;
+  font-weight: 600;
+}
+
+.login-btn:hover {
+  opacity: 0.85;
+}
+
+/* Forgot Password */
+.login-link {
+  display: block;
+  text-align: center;
+  margin-top: 15px;
+  color: #00a8ff !important;
+}

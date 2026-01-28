@@ -1,0 +1,39 @@
+.student-card .card {
+  border-radius: 14px;
+  box-shadow: 0px 4px 20px rgba(0,0,0,0.08);
+}
+
+.student-photo {
+  width: 140px;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #dee2e6;
+}
+
+.search-input {
+  border-radius: 30px !important;
+  padding: 10px 18px !important;
+  height: 45px;
+  font-size: 15px;
+  border: 1px solid #d1d5db !important;
+  transition: all 0.2s ease-in-out;
+}
+
+.search-input:focus {
+  border-color: #0d6efd !important;
+  box-shadow: 0 0 0 3px rgba(13, 110, 253, 0.15);
+}
+
+.search-btn {
+  height: 45px;
+  padding: 0 25px;
+  border-radius: 30px;
+  font-size: 15px;
+  background-color: #0d6efd;
+  transition: 0.2s;
+}
+
+.search-btn:hover {
+  background-color: #0b5ed7;
+}

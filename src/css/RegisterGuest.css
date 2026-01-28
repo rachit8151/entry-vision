@@ -1,0 +1,58 @@
+/* =============================
+   Dark Mode Input Styling (Same as Signup/Login)
+============================= */
+
+.register-box label {
+  color: #c7cbd1;
+  font-weight: 500;
+}
+
+.register-box .form-control,
+.register-box textarea {
+  background: none !important;
+  border: none !important;
+  border-bottom: 2px solid #2d323c !important;
+  border-radius: 0 !important;
+  padding: 10px 4px;
+  color: #e3e3e3 !important;
+  transition: 0.25s ease;
+}
+
+/* Neon Focus (same as signup) */
+.register-box .form-control:focus,
+.register-box textarea:focus {
+  border-bottom: 2px solid #00a8ff !important;
+  outline: none !important;
+  box-shadow: 0 3px 8px rgba(0, 168, 255, 0.3) !important;
+}
+
+/* Card Container */
+.register-box {
+  background-color: #13161b !important;
+  border: 1px solid #1c1f26 !important;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 0 12px rgba(0, 168, 255, 0.08);
+  color: #e3e3e3;
+}
+
+/* Register Button */
+.register-box .btn-primary {
+  background-color: #00a8ff !important;
+  border: none !important;
+  font-weight: 600;
+  border-radius: 20px;
+}
+
+.register-box .btn-primary:hover {
+  opacity: 0.9;
+}
+
+/* Table container fix */
+.table-card {
+  background-color: #13161b !important;
+  border-radius: 12px;
+  padding: 25px;
+  border: 1px solid #1c1f26 !important;
+}
+

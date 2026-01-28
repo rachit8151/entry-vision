@@ -1,0 +1,114 @@
+/* ----------- Table Outer Box ----------- */
+.table-wrapper {
+  max-width: 1100px;
+  margin: 40px auto;
+  padding: 25px;
+  background: #0f1217;
+  border-radius: 14px;
+  border: 1px solid #1c1f26;
+  box-shadow: 0 0 18px rgba(0, 168, 255, 0.08);
+}
+
+/* ----------- Title ----------- */
+.table-wrapper h2 {
+  text-align: center;
+  color: #e3e3e3;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+/* ----------- Table ----------- */
+.custom-table {
+  width: 100%;
+  border-collapse: collapse;
+  background: #13161b;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* ----------- Table Head ----------- */
+.custom-table thead {
+  background: #1a1f26;
+}
+
+.custom-table th {
+  padding: 14px 12px;
+  color: #d7dce5;
+  text-align: left;
+  font-weight: 600;
+  font-size: 14px;
+  border-bottom: 1px solid #222832;
+}
+
+/* ----------- Rows ----------- */
+.custom-table td {
+  padding: 13px 12px;
+  color: #cdd3dd;
+  border-bottom: 1px solid #1c212b;
+  font-size: 14px;
+}
+
+/* Last row — remove border */
+.custom-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+/* Hover Effect */
+.custom-table tbody tr:hover {
+  background: #1c222d;
+  transition: 0.2s;
+}
+
+/* ----------- Status Pills ----------- */
+.status-pill {
+  padding: 4px 10px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.status-pending {
+  background: #2d3748;
+  color: #cbd5e1;
+}
+
+.status-approved {
+  background: #059669;
+  color: white;
+}
+
+/* ----------- Buttons ----------- */
+.btn-approve {
+  background: #10b981;
+  color: white;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 18px;
+  border: none;
+}
+
+.btn-reject {
+  background: #ef4444;
+  color: white;
+  padding: 6px 14px;
+  font-size: 13px;
+  border-radius: 18px;
+  border: none;
+}
+
+.btn-approve:hover,
+.btn-reject:hover {
+  opacity: 0.85;
+  cursor: pointer;
+}
+/* Vertical column partitions */
+.custom-table th,
+.custom-table td {
+  border-right: 1px solid #1f2530;   /* soft vertical line */
+}
+
+/* Remove line from last column */
+.custom-table th:last-child,
+.custom-table td:last-child {
+  border-right: none;
+}

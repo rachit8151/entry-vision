@@ -1,0 +1,105 @@
+/* ===============================
+   DARK NEON PROFILE PAGE (FINAL)
+   =============================== */
+
+/* Full page dark background */
+.profile-container {
+  background-color: #0d0f12;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  padding: 40px 15px;
+}
+
+/* Center profile card */
+.profile-card {
+  width: 100%;
+  max-width: 800px;
+  background-color: #13161b;
+  border: 1px solid #1c1f26;
+  border-radius: 14px;
+  padding: 35px;
+  color: #e3e3e3;
+  box-shadow: 0 0 18px rgba(0, 168, 255, 0.06);
+}
+
+/* Profile Title */
+.profile-card h2 {
+  font-weight: 600;
+  color: #e3e3e3;
+}
+
+/* Labels */
+.profile-card label {
+  color: #cfcfcf;
+  font-weight: 500;
+}
+
+/* Underline Inputs */
+.profile-card input,
+.profile-card select {
+  background: none !important;
+  border: none !important;
+  border-bottom: 2px solid #2d323c !important;
+  border-radius: 0 !important;
+  color: #e3e3e3 !important;
+  padding: 10px 4px;
+  transition: 0.25s ease;
+}
+
+/* Input focus neon effect */
+.profile-card input:focus,
+.profile-card select:focus {
+  border-bottom: 2px solid #00a8ff !important;
+  box-shadow: 0 3px 8px rgba(0,168,255,0.3) !important;
+  outline: none !important;
+}
+
+/* Dropdown menu */
+.profile-card select option {
+  background-color: #13161b;
+  color: #e3e3e3;
+}
+
+/* Save button */
+.profile-card button {
+  background-color: #00a8ff !important;
+  border: none !important;
+  font-weight: 600;
+  padding: 12px 30px;
+  border-radius: 25px;
+}
+
+.profile-card button:hover {
+  opacity: 0.85;
+}
+
+/* Profile Image */
+.profile-img-square {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  border-radius: 12px;
+  border: 2px solid #00a8ff;
+  transition: 0.3s ease;
+}
+
+.profile-img-square:hover {
+  transform: scale(1.08);
+  cursor: pointer;
+}
+
+/* Camera Preview */
+.camera-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.webcam-preview {
+  width: 240px;
+  height: 240px;
+  border-radius: 8px;
+  border: 1px solid #00a8ff;
+  object-fit: cover;
+}

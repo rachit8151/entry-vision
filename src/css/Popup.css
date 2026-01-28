@@ -1,0 +1,71 @@
+.popup-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999;
+}
+
+.popup-box {
+  width: 350px;
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 14px;
+  box-shadow: 0px 10px 40px rgba(0,0,0,0.15);
+  text-align: center;
+  animation: popupFade 0.2s ease;
+}
+
+@keyframes popupFade {
+  from { transform: scale(0.93); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.popup-photo {
+  width: 150px;
+  height: 150px;
+  object-fit: cover;
+  border-radius: 10px;
+  margin: 10px auto;
+  display: block;
+}
+
+/* ONLY badges get color */
+.badge-red {
+  background: #dc2626;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.badge-green {
+  background: #16a34a;
+  color: white;
+  padding: 4px 10px;
+  border-radius: 6px;
+}
+
+.popup-buttons {
+  margin-top: 15px;
+}
+
+.btn-gray,
+.btn-blue {
+  padding: 8px 14px;
+  border: none;
+  border-radius: 6px;
+  margin: 6px;
+  cursor: pointer;
+}
+
+.btn-gray {
+  background: #6b7280;
+  color: white;
+}
+
+.btn-blue {
+  background: #2563eb;
+  color: white;
+}
