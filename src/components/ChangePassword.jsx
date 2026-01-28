@@ -3,7 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import "../css/ChangePassword.css";
 
 const ChangePassword = (props) => {
-
+const API_BASE = import.meta.env.VITE_API_URL || "http://localhost:3000";
     const [formData, setFormData] = useState({
         currentPassword: '',
         newPassword: '',
@@ -44,7 +44,7 @@ const ChangePassword = (props) => {
                 return;
             }
 
-            const response = await fetch("http://localhost:3000/api/auth/changePassword", {
+            const response = await fetch(`${API_BASE}/api/auth/changePassword`, {
                 method: "POST",
                 headers: {
                     "Content-Type": "application/json",

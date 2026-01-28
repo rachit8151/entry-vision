@@ -6,7 +6,9 @@ const ManageHODs = () => {
   const [search, setSearch] = useState("");
   const [loading, setLoading] = useState(false);
 
-  const API_BASE = "http://localhost:3000/api/universityAdmin";
+  const BASE_URL = import.meta.env.VITE_API_URL || "http://localhost:3000";
+  const API_BASE = `${BASE_URL}/api/universityAdmin`;
+
 
   // ✅ Fetch HODs (with optional search)
   const fetchHODs = async (query = "") => {
@@ -79,18 +81,16 @@ const ManageHODs = () => {
                   <td>{h.department}</td>
                   <td>
                     <span
-                      className={`badge ${
-                        h.status === "Active" ? "bg-success" : "bg-secondary"
-                      }`}
+                      className={`badge ${h.status === "Active" ? "bg-success" : "bg-secondary"
+                        }`}
                     >
                       {h.status}
                     </span>
                   </td>
                   <td>
                     <button
-                      className={`btn btn-sm ${
-                        h.status === "Active" ? "btn-danger" : "btn-success"
-                      }`}
+                      className={`btn btn-sm ${h.status === "Active" ? "btn-danger" : "btn-success"
+                        }`}
                       onClick={() => toggleStatus(h.regId)}
                     >
                       {h.status === "Active" ? "Deactivate" : "Activate"}
