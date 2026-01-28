@@ -60,7 +60,7 @@ const Login = ({ showAlert, setIsLoggedIn }) => {
       const res = await axios.post(
         `${API_BASE}/api/auth/login`,
         {
-          username: credentials.identifier,
+          email: credentials.identifier,
           password: credentials.password,
         },
         { headers: { "Content-Type": "application/json" } } // ✅ important
