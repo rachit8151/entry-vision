@@ -61,6 +61,7 @@ const Login = ({ showAlert, setIsLoggedIn }) => {
         `${API_BASE}/api/auth/login`,
         {
           email: credentials.identifier,
+          username: credentials.identifier,
           password: credentials.password,
         },
         { headers: { "Content-Type": "application/json" } } // ✅ important
