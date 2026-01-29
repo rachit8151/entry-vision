@@ -44,7 +44,6 @@ const UserSchema = new mongoose.Schema({
     default: null
   }
 }, {
-  collection: 'tblRegistration',
   timestamps: true
 });
 
