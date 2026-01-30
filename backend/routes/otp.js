@@ -1,6 +1,4 @@
-// ==========================================
-// ✅ SECURE OTP FOR PASSWORD RESET
-// ==========================================
+// backend/routes/otp.js
 const express = require('express');
 const router = express.Router();
 const bcrypt = require('bcryptjs');
@@ -29,50 +27,53 @@ function generateOTP() {
 // ==========================================
 // 🆕 SEND OTP FOR SIGNUP (no user check)
 // ==========================================
-router.post('/signup-otp', async (req, res) => {
-  const { email } = req.body;
-  if (!email)
-    return res.status(400).json({ success: false, error: 'Email is required' });
-
+router.post("/signup-otp", async (req, res) => {
   try {
-    const otp = generateOTP();
-    const salt = await bcrypt.genSalt(10);
-    const otpHash = await bcrypt.hash(otp, salt);
-    const expiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
+    const { email } = req.body;
 
-    // Reuse ForgetPassword model for simplicity
-    await ForgetPassword.deleteOne({ email });
+    if (!email) {
+      return res.status(400).json({ success: false, error: "Email required" });
+    }
+
+    // generate OTP
+    const otp = Math.floor(100000 + Math.random() * 900000).toString();
+    const otpHash = await bcrypt.hash(otp, 10);
+
+    // delete old OTPs for same email
+    await ForgetPassword.deleteMany({ email });
 
     await ForgetPassword.create({
       email,
       otpHash,
-      expiresAt
+      expiresAt: new Date(Date.now() + 10 * 60 * 1000),
     });
 
-
-    const html = `
-      <div style="font-family: Arial; line-height: 1.5;">
-        <h3>Smart Campus Entry System</h3>
-        <p>Your OTP for signup verification is:</p>
-        <h2>${otp}</h2>
-        <p>This OTP is valid for 10 minutes.</p>
-      </div>
-    `;
+    // mailer
+    const transporter = nodemailer.createTransport({
+      service: "gmail",
+      auth: {
+        user: process.env.EMAIL_USER,
+        pass: process.env.EMAIL_PASS,
+      },
+    });
 
     await transporter.sendMail({
-      from: EMAIL_USER,
+      from: process.env.EMAIL_FROM,
       to: email,
-      subject: 'Smart Campus - Signup OTP Verification',
-      html,
+      subject: "🔐 Signup OTP - Smart Campus Entry",
+      text: `Your OTP is: ${otp}\nValid for 10 minutes.`,
     });
 
-    res.json({ success: true, message: 'Signup OTP sent successfully!' });
+    return res.json({ success: true, message: "OTP sent successfully" });
+
   } catch (err) {
-    console.error('Signup OTP Error:', err);
-    res.status(500).json({ success: false, error: 'Internal Server Error' });
+    console.error("❌ Signup OTP error:", err);
+    return res.status(500).json({
+      success: false,
+      error: "Failed to send OTP",
+    });
   }
 });
-
 // ==========================================
 // 🆕 VERIFY SIGNUP OTP
 // ==========================================
