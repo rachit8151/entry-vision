@@ -10,6 +10,7 @@ const UniversityAdminSchema = new mongoose.Schema(
     },
     adminId: {
       type: String,
+      sparse: true,
       unique: true,
     },
     firstName: {
@@ -30,6 +31,7 @@ const UniversityAdminSchema = new mongoose.Schema(
     aadharNo: {
       type: String,
       unique: true,
+      sparse: true,
       match: [/^[0-9]{12}$/, "Invalid Aadhar number (must be 12 digits)"],
     },
     address: {
