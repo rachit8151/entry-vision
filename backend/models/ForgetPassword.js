@@ -40,6 +40,8 @@ const ForgetPasswordSchema = new mongoose.Schema({
     required: true,
     index: { expires: 600 },
   },
-}, { timestamps: true });
+}, {
+  collection: "forgetpasswords", 
+  timestamps: true });
 
 module.exports = mongoose.model('ForgetPassword', ForgetPasswordSchema);

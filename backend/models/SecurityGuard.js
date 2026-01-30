@@ -7,7 +7,6 @@ const SecurityGuardSchema = new mongoose.Schema(
       unique: true,
       required: true
     },
-    // 🔹 Foreign Key link with tblRegistration
     regId: {
       type: Number,
       required: true,
