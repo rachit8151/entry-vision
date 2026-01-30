@@ -1,11 +1,15 @@
 // backend/routes/universityAdmin.js
 const express = require("express");
 const router = express.Router();
-// const Papa = require("papaparse");
-const nodemailer = require("nodemailer");
 
+const multer = require("multer");
+const path = require("path");
+const fs = require("fs");
+
+const nodemailer = require("nodemailer");
 const UniversityAdmin = require("../models/UniversityAdmin");
 const Student = require("../models/Student");
+
 
 //==============================================================
 //🔹 SECTION 1 — UNIVERSITY ADMIN PROFILE (Photo Upload)
@@ -60,7 +64,7 @@ router.put("/profile/:regId", async (req, res) => {
       {
         new: true,
         runValidators: true,
-        upsert: true, // ✅ auto-create profile
+        upsert: true, // auto-create if missing
       }
     );
 
@@ -77,6 +81,7 @@ router.put("/profile/:regId", async (req, res) => {
     });
   }
 });
+
 
 
 // ============================================================
