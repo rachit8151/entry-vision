@@ -41,11 +41,14 @@ router.post('/signup-otp', async (req, res) => {
     const expiresAt = new Date(Date.now() + 10 * 60 * 1000); // 10 minutes
 
     // Reuse ForgetPassword model for simplicity
-    await ForgetPassword.findOneAndUpdate(
-      { email },
-      { email, otpHash, expiresAt },
-      { upsert: true, new: true }
-    );
+    await ForgetPassword.deleteOne({ email });
+
+    await ForgetPassword.create({
+      email,
+      otpHash,
+      expiresAt
+    });
+
 
     const html = `
       <div style="font-family: Arial; line-height: 1.5;">
