@@ -69,10 +69,16 @@ router.put("/profile/:regId", uploadPhoto.single("photo"), async (req, res) => {
       }
     }
 
-    const admin = await UniversityAdmin.findOneAndUpdate({ regId }, updateData, {
-      new: true,
-      runValidators: true,
-    });
+    const admin = await UniversityAdmin.findOneAndUpdate(
+      { regId: Number(regId) },
+      updateData,
+      {
+        new: true,
+        runValidators: true,
+        upsert: true,   // ✅ THIS IS THE KEY FIX
+      }
+    );
+
 
     if (!admin) {
       return res.status(404).json({ success: false, message: "Admin not found" });
