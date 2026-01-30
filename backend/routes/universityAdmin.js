@@ -1,8 +1,6 @@
+// backend/routes/universityAdmin.js
 const express = require("express");
 const router = express.Router();
-const multer = require("multer");
-const path = require("path");
-const fs = require("fs");
 // const Papa = require("papaparse");
 const nodemailer = require("nodemailer");
 
@@ -52,52 +50,34 @@ router.get("/profile/:regId", async (req, res) => {
 });
 
 // ✅ PUT - Update University Admin Profile (with optional photo)
-router.put("/profile/:regId", uploadPhoto.single("photo"), async (req, res) => {
+router.put("/profile/:regId", async (req, res) => {
   try {
-    const regId = req.params.regId;
-    const updateData = req.body;
-
-    // ✅ Handle new photo upload
-    if (req.file) {
-      const newPath = `/uploads/admin_photos/${req.file.filename}`;
-      updateData.photoUrl = newPath;
-
-      // 🧹 Remove old photo if exists
-      const existing = await UniversityAdmin.findOne({ regId });
-      if (existing && existing.photoUrl && fs.existsSync(`.${existing.photoUrl}`)) {
-        fs.unlinkSync(`.${existing.photoUrl}`);
-      }
-    }
+    const regId = Number(req.params.regId);
 
     const admin = await UniversityAdmin.findOneAndUpdate(
-      { regId: Number(regId) },
-      updateData,
+      { regId },
+      req.body,
       {
         new: true,
         runValidators: true,
-        upsert: true,   // ✅ THIS IS THE KEY FIX
+        upsert: true, // ✅ auto-create profile
       }
     );
 
-
-    if (!admin) {
-      return res.status(404).json({ success: false, message: "Admin not found" });
-    }
-
-    res.json({
+    return res.json({
       success: true,
       message: "Profile updated successfully",
       admin,
     });
   } catch (err) {
     console.error("❌ Error updating admin profile:", err);
-    res.status(500).json({
+    return res.status(500).json({
       success: false,
       message: "Server error while updating profile",
-      error: err.message,
     });
   }
 });
+
 
 // ============================================================
 // 🔹 SECTION 2 — BULK STUDENT UPLOAD (XLSX + EMAIL)
