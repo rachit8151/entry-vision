@@ -48,5 +48,5 @@ FaceDataSchema.pre("save", function (next) {
   next();
 });
 
-module.exports = mongoose.model("FaceData", FaceDataSchema);
+module.exports = mongoose.models.FaceData || mongoose.model("FaceData", FaceDataSchema);
 //https://github.com/deepinsight/insightface/tree/master/model_zoo

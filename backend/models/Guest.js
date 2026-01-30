@@ -70,4 +70,4 @@ const GuestSchema = new mongoose.Schema(
   { collection: "tblGuests", timestamps: true }
 );
 
-module.exports = mongoose.model("Guest", GuestSchema);
+module.exports = mongoose.models.Guest || mongoose.model("Guest", GuestSchema);

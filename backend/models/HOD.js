@@ -88,4 +88,4 @@ const HODSchema = new mongoose.Schema(
   { collection: "tblHODs", timestamps: true }
 );
 
-module.exports = mongoose.model("HOD", HODSchema);
+module.exports = mongoose.models.HOD || mongoose.model("HOD", HODSchema);

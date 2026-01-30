@@ -8,4 +8,4 @@ const StateSchema = new mongoose.Schema(
   { collection: "tblStates" }
 );
 
-module.exports = mongoose.model("State", StateSchema);
+module.exports = mongoose.models.State || mongoose.model("State", StateSchema);

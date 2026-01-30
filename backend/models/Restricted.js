@@ -18,4 +18,4 @@ const RestrictedSchema = new mongoose.Schema(
   }
 );
 
-module.exports = mongoose.model("Restricted", RestrictedSchema);
+module.exports = mongoose.models.Restricted || mongoose.model("Restricted", RestrictedSchema);

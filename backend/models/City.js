@@ -10,4 +10,4 @@ const CitySchema = new mongoose.Schema(
   { collection: "tblCities" }
 );
 
-module.exports = mongoose.model("City", CitySchema);
+module.exports = mongoose.models.City || mongoose.model("City", CitySchema);

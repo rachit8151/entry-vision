@@ -49,4 +49,4 @@ ForgetPasswordSchema.index(
   { expireAfterSeconds: 600 }
 );
 
-module.exports = mongoose.model('ForgetPassword', ForgetPasswordSchema);
+module.exports = mongoose.models.ForgetPassword || mongoose.model('ForgetPassword', ForgetPasswordSchema);

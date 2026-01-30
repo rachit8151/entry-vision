@@ -6,4 +6,4 @@ const CourseSchema = new mongoose.Schema({
   deptId: { type: Number, required: true }, // foreign reference to Department.deptId
 }, { collection: "tblCourses" });
 
-module.exports = mongoose.model("Course", CourseSchema);
+module.exports = mongoose.models.Course || mongoose.model("Course", CourseSchema);

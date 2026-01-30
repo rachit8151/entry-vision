@@ -58,4 +58,4 @@ const UniversityAdminSchema = new mongoose.Schema(
   { collection: "tblUniversityAdmin", timestamps: true }
 );
 
-module.exports = mongoose.model("UniversityAdmin", UniversityAdminSchema);
+module.exports = mongoose.models.UniversityAdmin || mongoose.model("UniversityAdmin", UniversityAdminSchema);

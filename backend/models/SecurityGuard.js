@@ -72,4 +72,4 @@ const SecurityGuardSchema = new mongoose.Schema(
 );
 
 // ✅ Correct export name
-module.exports = mongoose.model("SecurityGuard", SecurityGuardSchema);
+module.exports = mongoose.models.SecurityGuard || mongoose.model("SecurityGuard", SecurityGuardSchema);

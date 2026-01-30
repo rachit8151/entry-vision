@@ -13,4 +13,4 @@ const DepartmentSchema = new mongoose.Schema({
   }
 }, { collection: 'tblDepartments' });
 
-module.exports = mongoose.model('Department', DepartmentSchema);
+module.exports = mongoose.models.Department || mongoose.model('Department', DepartmentSchema);
