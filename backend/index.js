@@ -1,6 +1,7 @@
 // ==========================================
 // ✅ BACKEND ENTRY POINT (index.js)
 // ==========================================
+const dotenv = require("dotenv");
 require('dotenv').config();
 const connectToMongo = require('./db');
 const express = require('express');
@@ -27,7 +28,8 @@ const io = new Server(server, {
     methods: ["GET", "POST", "PUT", "DELETE"],
   },
 });
-app.options('*', cors());
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 // Global map for connected HODs
 global.connectedHODs = {};
 
@@ -78,7 +80,7 @@ app.use('/api/changePassword', require('./routes/changePassword'));
 app.use('/api/otp', require('./routes/otp'));
 
 // University + departments
-app.use('/api/universityAdmin', require('./routes/universityAdmin'));
+app.use("/api/universityAdmin", require("./routes/universityAdmin"));
 app.use('/api/departments', require('./routes/departments'));
 
 // Guest management
